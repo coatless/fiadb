@@ -1,0 +1,67 @@
+To convert from Oracle to Postgres, the following functions are particularly problematic:
+
+Decode
+nvl
+
+
+====
+Decode
+====
+
+With regard to decode:
+
+decode(expr, search, result [, search, result...] [, default])
+
+We switch to either...
+
+Simple CASE:
+
+CASE search-expression
+    WHEN expression [, expression [ ... ]] THEN
+      statements
+  [ WHEN expression [, expression [ ... ]] THEN
+      statements
+    ... ]
+  [ ELSE
+      statements ]
+END CASE;
+
+
+OR
+
+Searched CASE:
+
+CASE
+    WHEN boolean-expression THEN
+      statements
+  [ WHEN boolean-expression THEN
+      statements
+    ... ]
+  [ ELSE
+      statements ]
+END CASE;
+
+Take for example:
+
+DECODE(c.prop_basis,
+'MACR',
+psm.adj_factor_macr,
+psm.adj_factor_subp) -- this is the expression from ref_pop_attribute table
+)
+
+goes to:
+
+CASE c.prop_basis
+WHEN 'MACR' THEN psm.adj_factor_macr
+ELSE 
+  psm.adj_factor_subp
+END
+
+===
+nvl
+===
+
+This function has a very nice 1-1 relationship with one in Postgres:
+
+nvl(expr1, expr2, expr3,....) => coalesce(expr1, expr2, expr3,....) 
+

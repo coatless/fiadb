@@ -1,0 +1,26 @@
+-- Create the VEG_QUADRAT table
+create table FIA.VEG_QUADRAT(
+	CN varchar(34),
+	PLT_CN varchar(34),
+	VVT_CN varchar(34),
+	VSB_CN varchar(34),
+	INVYR numeric(4,0),
+	STATECD numeric(4,0),
+	COUNTYCD numeric(3,0),
+	PLOT numeric(5,0),
+	SUBP numeric(1,0),
+	QUADRAT numeric(1,0),
+	CONDID numeric(1,0),
+	QUADRAT_STATUS numeric(1,0),
+	QUADRAT_STATUS_PRE2004 numeric(1,0),
+	TRAMPLING numeric(1,0),
+	CREATED_BY varchar(30),
+	CREATED_DATE date,
+	CREATED_IN_INSTANCE varchar(6),
+	MODIFIED_BY varchar(30),
+	MODIFIED_DATE date,
+	MODIFIED_IN_INSTANCE varchar(6),
+	PRIMARY KEY (CN),
+	UNIQUE(PLT_CN, VVT_CN, VSB_CN, QUADRAT),
+	UNIQUE(PLT_CN, VVT_CN, VSB_CN, CN)
+);	

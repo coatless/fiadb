@@ -1,0 +1,25 @@
+-- Create the OZONE_VALIDATION table
+create table FIA.OZONE_VALIDATION(
+	CN varchar(34),
+	PLT_CN varchar(34),
+	INVYR numeric(4,0),
+	STATECD	numeric(4,0),
+	COUNTYCD numeric(3,0),
+	O3PLOT integer,
+	FIELD_ID numeric(7,0),
+	SPLIT_PLOTID numeric(1,0),
+	BIOSPCD smallint,
+	QASTATCD numeric(1,0),
+	CRWTYPCD numeric(1,0),
+	LEAFVCHR smallint,
+	INJVALID smallint,
+	O3_STATCD smallint,
+	MEASYEAR numeric(4,0),
+	CREATED_BY varchar(20),
+	CREATED_DATE date,
+	CREATED_IN_INSTANCE varchar(6),
+	MODIFIED_BY varchar(20),
+	MODIFIED_DATE date,
+	MODIFIED_IN_INSTANCE varchar(6),
+	PRIMARY KEY (CN), UNIQUE(PLT_CN,BIOSPCD)
+);

@@ -1,0 +1,27 @@
+-- Create the P2VEG_SUBP_STRUCTURE table
+create table FIA.P2VEG_SUBP_STRUCTURE(
+	CN varchar(34),
+	PLT_CN varchar(34),
+	STATECD	numeric(4,0),
+	UNITCD numeric(2,0),
+	COUNTYCD numeric(3,0),
+	PLOT integer,
+	INVYR numeric(4,0),
+	SUBP smallint,
+	CONDID numeric(1,0),
+	GROWTH_HABIT_CD varchar(2),
+	LAYER  numeric(1,0),
+	COVER_PCT numeric(3,0),
+	CREATED_BY varchar(20),
+	CREATED_DATE date,
+	CREATED_IN_INSTANCE varchar(6),
+	MODIFIED_BY varchar(20),
+	MODIFIED_DATE date,
+	MODIFIED_IN_INSTANCE varchar(6),
+	CYCLE numeric(2,0),
+	SUBCYCLE numeric(2,0),
+	PRIMARY KEY (CN), 
+	UNIQUE(PLT_CN, SUBP, CONDID, GROWTH_HABIT_CD, LAYER), 
+	UNIQUE(STATECD, COUNTYCD, PLOT, INVYR, SUBP, CONDID, GROWTH_HABIT_CD, LAYER),
+	UNIQUE(STATECD, CYCLE, SUBCYCLE, COUNTYCD, PLOT, SUBP, CONDID, GROWTH_HABIT_CD, LAYER)
+);

@@ -1,0 +1,25 @@
+-- Create the VEG_VISIT table
+create table FIA.VEG_VISIT(
+	CN varchar(34),
+	PLT_CN varchar(34),
+	INVYR numeric(4,0),
+	STATECD numeric(4,0),
+	COUNTYCD numeric(3,0),
+	PLOT numeric(5,0),
+	VEG_QA_STATUS numeric(1,0),
+	VEG_KINDCD numeric(2,0),
+	VEG_MANUAL varchar(8),
+	TRACE_COVER_ALLOWED numeric(1,0),
+	VEG_MEASYEAR numeric(4,0),
+	VEG_MEASMON numeric(2,0),
+	VEG_MEASDAY numeric(2,0),
+	VEG_SAMPLE_BASIS numeric(1,0),
+	CREATED_BY varchar(30),
+	CREATED_DATE date,
+	CREATED_IN_INSTANCE varchar(6),
+	MODIFIED_BY varchar(30),
+	MODIFIED_DATE date,
+	MODIFIED_IN_INSTANCE varchar(6),
+	PRIMARY KEY (CN),
+	UNIQUE(PLT_CN)
+);

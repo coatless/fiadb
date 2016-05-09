@@ -1,0 +1,28 @@
+-- Create the DWM_MICROPLOT_FUEL table
+create table FIA.DWM_MICROPLOT_FUEL(
+	CN varchar(34),
+	PLT_CN varchar(34),
+	INVYR numeric(4,0),
+	STATECD	numeric(4,0),
+	COUNTYCD numeric(3,0),
+	PLOT numeric(5,0),
+	SUBP numeric(1,0),
+	MEASYEAR numeric(4,0),
+	LVSHRBCD numeric(2,0),
+	DSHRBCD numeric(2,0),
+	LVHRBCD numeric(2,0),
+	DHRBCD numeric(2,0),
+	LITTERCD integer,
+	LVSHRBHT real,
+	DSHRBHT real,
+	LVHRBHT real,
+	DHRBHT real,
+	CREATED_BY varchar(30),
+	CREATED_DATE date,
+	CREATED_IN_INSTANCE varchar(6),
+	MODIFIED_BY varchar(30),
+	MODIFIED_DATE date,
+	MODIFIED_IN_INSTANCE varchar(6),
+	MICR_SAMPLE_METHOD varchar(6),
+	UNIQUE(PLT_CN,SUBP),PRIMARY KEY (CN)
+);

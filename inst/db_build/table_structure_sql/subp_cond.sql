@@ -1,0 +1,27 @@
+-- Create the SUBP_COND table
+create table FIA.SUBP_COND(
+	CN varchar(34),
+	PLT_CN varchar(34),
+	INVYR numeric(4,0),
+	STATECD numeric(4,0),
+	UNITCD numeric(2,0),
+	COUNTYCD numeric(3,0),
+	PLOT numeric(5,0),
+	SUBP numeric(3,0),
+	CONDID numeric(1,0),
+	CREATED_BY varchar(30),
+	CREATED_DATE date,
+	CREATED_IN_INSTANCE varchar(6),
+	MODIFIED_BY varchar(30),
+	MODIFIED_DATE date,
+	MODIFIED_IN_INSTANCE varchar(6),
+	MICRCOND_PROP real,
+	SUBPCOND_PROP real,
+	MACRCOND_PROP real,
+	NONFR_INCL_PCT_SUBP numeric(3,0),
+	NONFR_INCL_PCT_MACRO numeric(3,0),
+	CYCLE numeric(2,0),
+	SUBCYCLE numeric(2,0),
+	PRIMARY KEY (CN),
+	UNIQUE(PLT_CN, SUBP, CONDID)
+);

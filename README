@@ -1,0 +1,66 @@
+To use the package, you must first have Postgres installed. (password)
+
+===
+OS X
+===
+
+To install Postgres on OS X, you have two options:
+1. Download the full blown, always running, enterprise level Postgres Installer: http://www.enterprisedb.com/products/pgdownload.do#osx
+2. Download the two separate applications that run on demand
+
+In the case of option 2, the install is:
+Step 1: Download Postgres.app: http://postgresapp.com/
+
+Step 2: Download pgAdmin3: http://www.pgadmin.org/download/macosx.php
+
+Step 3: Enable psql within terminal via symbolic link
+sudo ln -s "/Applications/Postgres.app/Contents/Versions/9.4/bin/psql" /usr/local/bin/psql
+
+Step 4: Launch Postgres everytime you want to use postgresql. (An elephant will appear as an icon in the task bar)
+
+===
+Windows
+===
+
+To install it via windows grab a copy here:
+
+http://www.postgresql.org/download/windows/
+
+During the install process, make sure to enable the installation of pgAdmin3.
+
+Also, you will need to download cygwin, which emulates the linux terminal.
+
+https://www.cygwin.com/setup-x86_64.exe
+
+Make sure to install packages "curl" and "postgres" via the installer file.
+
+===
+Linux
+===
+Open your terminal and type either:
+
+
+For Ubuntu / Debian - 
+apt-get install postgresql-9.4
+
+For RedHat/Fedora - 
+yum install postgresql-server
+
+Requires either CentOS >= 7 OR Fedora >= 20
+
+
+
+
+=== 
+Create User
+===
+
+Open the terminal
+
+psql -p5432 (to load into postgres)
+
+On the postgres prompt, enter:
+
+CREATE ROLE postgres WITH PASSWORD 'nasa' SUPERUSER;
+
+This creates a postgres user with password "nasa" as a superuser (e.g. admin) on the db cluster.

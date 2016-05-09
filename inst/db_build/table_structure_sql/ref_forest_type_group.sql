@@ -1,0 +1,26 @@
+-- Create the Reference Forest Type Group table
+create table FIA.REF_FOREST_TYPE_GROUP(
+	VALUE numeric(3,0),
+	MEANING varchar(80),
+	ABBR varchar(40),
+	DUFF_DENSITY numeric(12,10),
+	DUFF_CARBON_RATIO numeric(12,11),
+	LITTER_DENSITY numeric(12,10),
+	LITTER_CARBON_RATIO numeric(12,11),
+	PILE_DENSITY  numeric(12,10),
+	PILE_CARBON_RATIO  numeric(12,11),
+	PILE_DECAY_RATIO numeric(12,11),
+	FWD_DENSITY numeric(12,10),
+	FWD_CARBON_RATIO  numeric(12,11),
+	FWD_DECAY_RATIO numeric(12,11),
+	FWD_SMALL_QMD  numeric(12,10),
+	FWD_MEDIUM_QMD  numeric(12,10),
+	FWD_LARGE_QMD  numeric(12,10),
+	CREATED_BY varchar(30),
+	CREATED_DATE date,
+	CREATED_IN_INSTANCE varchar(6),
+	MODIFIED_BY varchar(30),
+	MODIFIED_DATE date,
+	MODIFIED_IN_INSTANCE varchar(6),
+	PRIMARY KEY(VALUE)
+);

@@ -1,0 +1,25 @@
+-- Create the SOILS_EROSION table
+create table FIA.SOILS_EROSION(
+	CN varchar(34),
+	PLT_CN varchar(34),
+	INVYR numeric(4,0),
+	STATECD numeric(4,0),
+	COUNTYCD numeric(3,0),
+	PLOT numeric(5,0),
+	SUBP smallint,
+	MEASYEAR numeric(4,0),
+	SOILSPCT smallint,
+	COMPCPCT smallint,
+	TYPRTDCD smallint,
+	TYPCMPCD smallint,
+	TYPAREACD smallint,
+	TYPOTHRCD smallint,
+	CREATED_BY varchar(30),
+	CREATED_DATE date,
+	CREATED_IN_INSTANCE varchar(6),
+	MODIFIED_BY varchar(30),
+	MODIFIED_DATE date,
+	MODIFIED_IN_INSTANCE varchar(6),
+	PRIMARY KEY (CN),
+	UNIQUE(PLT_CN, SUBP)
+);

@@ -1,0 +1,26 @@
+-- Create the VEG_PLOT_SPECIES table
+create table FIA.VEG_PLOT_SPECIES(
+	CN varchar(34),
+	PLT_CN varchar(34),
+	VVT_CN	varchar(34),
+	INVYR numeric(4,0),
+	STATECD numeric(4,0),
+	COUNTYCD numeric(3,0),
+	PLOT numeric(5,0),
+	VEG_FLDSPCD varchar(16),
+	UNIQUE_SP_NBR numeric(2,0),
+	VEG_SPCD  varchar(16),
+	SPECIMEN_COLLECTED varchar(1),
+	SPECIMEN_LABEL_NBR integer,
+	SPECIMEN_NOT_COLLECTED_REASON numeric(2,0),
+	SPECIMEN_RESOLVED varchar(1),
+	CREATED_BY varchar(30),
+	CREATED_DATE date,
+	CREATED_IN_INSTANCE varchar(6),
+	MODIFIED_BY varchar(30),
+	MODIFIED_DATE date,
+	MODIFIED_IN_INSTANCE varchar(6),
+	PRIMARY KEY (CN),
+	UNIQUE(PLT_CN, VVT_CN, VEG_FLDSPCD, UNIQUE_SP_NBR),
+	UNIQUE(PLT_CN, VVT_CN, CN)
+);
